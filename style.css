@@ -1,0 +1,458 @@
+/* --- RESET DASAR & VARIABEL --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Georgia, serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --dark-green: #1b3322;
+    --cream: #f4ebd9;
+    --orange: #f26430;
+    --yellow: #f1a824;
+    --dark-black: #0b0c0c;
+}
+
+body {
+    background-color: var(--cream);
+    color: var(--dark-black);
+    overflow-x: hidden;
+}
+
+/* --- 1. HERO SECTION --- */
+.hero-section {
+    background-color: var(--dark-green);
+    min-height: 100vh;
+    position: relative;
+    color: var(--cream);
+    padding: 20px 40px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.logo {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: var(--cream);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.btn-top {
+    background-color: var(--yellow);
+    color: var(--dark-black) !important;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+/* Penata Letak Utama Dua Kolom di Atas */
+.hero-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 1100px;
+    margin: 60px auto 0 auto;
+    align-items: center;
+    gap: 40px;
+}
+
+/* Sisi Kiri (Wadah Foto) */
+.hero-left {
+    display: flex;
+    justify-content: center;
+}
+
+.photo-frame {
+    position: relative;
+    width: 280px;
+    height: 350px;
+}
+
+.photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    background-color: var(--orange); /* Menghindari area bolong jika foto belum disetel */
+}
+
+.bio-short-box {
+    position: absolute;
+    bottom: -20px;
+    left: -20px;
+    background-color: var(--orange);
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 11px;
+    max-width: 240px;
+    color: var(--cream);
+    line-height: 1.4;
+}
+
+/* Sisi Kanan (Teks Portofolio & Link Medsos) */
+.hero-right {
+    position: relative;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.giant-text-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.giant-text-bg h1 {
+    font-size: 5.5rem;
+    font-weight: 900;
+    line-height: 0.95;
+    letter-spacing: -2px;
+}
+
+.filled-text {
+    color: var(--cream);
+}
+
+.outline-text {
+    color: transparent;
+    -webkit-text-stroke: 1px var(--yellow);
+}
+
+.social-info {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding-left: 140px;
+    font-size: 1.1rem;
+    margin-top: 0;
+    transform: translateY(60px);
+}
+
+.social-info a {
+    color: inherit;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.social-info a:hover {
+    color: var(--yellow);
+}
+
+.scroll-down {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--yellow);
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--dark-black);
+    font-size: 11px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* --- 2. ABOUT SECTION --- */
+.about-section {
+    background-color: var(--cream);
+    padding: 100px 40px;
+}
+
+.about-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.about-left .section-title {
+    font-size: 4rem;
+    line-height: 1;
+    margin-bottom: 20px;
+}
+
+.about-left .section-desc {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    text-align: justify;
+}
+
+.btn-linkedin {
+    display: inline-block;
+    background-color: var(--orange);
+    color: white;
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.profile-placeholder-box {
+    width: 280px;
+    height: 350px;
+    background-color: #e5dac4;
+    border-radius: 8px;
+    margin: 0 auto;
+}
+
+/* Kontainer Utama Foto About Me */
+.profile-card {
+    position: relative;
+    width: 320px;
+    height: 400px;
+    background-color: #2b4436; /* Kotak Hijau Gelap di Paling Belakang */
+    border-radius: 12px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    overflow: visible; /* Agar tag oranye bisa sedikit keluar dari kotak */
+}
+
+/* Lingkaran Putih Elemen Estetik */
+.circle-bg {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background-color: var(--cream);
+    border-radius: 50%;
+    top: 60px;
+    z-index: 1;
+}
+
+/* Foto Utama (PNG Transparan) */
+.profile-img {
+    height: 90%;
+    width: auto;
+    object-fit: contain;
+    z-index: 2; /* Berada di depan lingkaran putih */
+    position: relative;
+}
+
+/* Tag Oranye Kiri */
+.tag-date {
+    position: absolute;
+    left: -20px;
+    top: 25%;
+    background-color: var(--orange);
+    color: var(--cream);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: bold;
+    z-index: 3;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    white-space: nowrap;
+}
+
+/* Tag Oranye Kanan */
+.tag-nationality {
+    position: absolute;
+    right: -20px;
+    bottom: 30%;
+    background-color: var(--orange);
+    color: var(--cream);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    z-index: 3;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* --- 3. RESUME SECTION --- */
+.resume-section {
+    background-color: var(--dark-green);
+    color: var(--cream);
+    padding: 100px 40px;
+}
+
+.resume-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+}
+
+.resume-block {
+    margin-bottom: 40px;
+}
+
+.resume-block h2 {
+    font-size: 2rem;
+    color: var(--yellow);
+    border-bottom: 2px solid var(--yellow);
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+}
+
+.resume-item {
+    margin-bottom: 25px;
+}
+
+.date-tag {
+    color: var(--yellow);
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.resume-item h3 {
+    font-size: 1.3rem;
+    margin: 5px 0;
+}
+
+.institution {
+    font-style: italic;
+    opacity: 0.8;
+}
+
+.bullet-list {
+    padding-left: 20px;
+    margin-top: 8px;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.cert-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    font-size: 14px;
+}
+
+.date-inline {
+    color: var(--yellow);
+    font-size: 12px;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    font-size: 15px;
+}
+
+.lang-flex {
+    display: flex;
+    gap: 30px;
+    font-size: 15px;
+}
+
+/* --- 4. WORK SECTION --- */
+.certificates-section {
+    background-color: var(--cream);
+    padding: 100px 40px;
+    text-align: center;
+}
+
+.certificates-container h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+/* --- CSS BARU UNTUK GRID 6 SERTIFIKAT --- */
+.certificates-section {
+    padding: 80px 5%;
+    background-color: var(--cream);
+    text-align: center;
+}
+
+.cert-grid-6 {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+    gap: 25px; /* Jarak antar kartu sertifikat */
+    margin-top: 30px;
+    max-width: 1000px; /* Membatasi lebar agar pas terbagi menjadi 3 kartu per baris */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cert-card {
+    width: 290px; /* Lebar kotak sedikit disesuaikan agar pas pembagian layarnya */
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    text-align: left;
+}
+
+.cert-card:hover {
+    transform: translateY(-8px);
+}
+
+/* Bingkai luar pembungkus foto sertifikat */
+.cert-img-wrapper {
+    width: 100%;
+    height: 200px;           /* Kita kunci tinggi bingkai kotak menjadi 200px */
+    background-color: #f7f7f7; /* Warna latar belakang abu-abu sangat muda yang bersih */
+    display: flex;           /* Mengaktifkan mode flex */
+    justify-content: center; /* Memaksa gambar otomatis berada di tengah secara horizontal */
+    align-items: center;     /* Memaksa gambar otomatis berada di tengah secara vertikal */
+    padding: 10px;           /* Jarak aman agar pinggiran sertifikat tidak menempel ke garis kotak */
+    box-sizing: border-box;  /* Memastikan padding tidak merusak ukuran total kotak */
+    overflow: hidden;        /* Mengunci agar tidak ada bagian yang bocor keluar */
+}
+
+/* Pengaturan foto sertifikat - Solusi mutlak anti-gepeng & anti-potong */
+.cert-img {
+    max-width: 100% !important;  /* Batas lebar maksimal 100% dari kotak */
+    max-height: 100% !important; /* Batas tinggi maksimal 100% dari kotak */
+    width: auto !important;      /* Membiarkan lebar menyesuaikan secara proporsional */
+    height: auto !important;     /* Membiarkan tinggi menyesuaikan secara proporsional */
+    object-fit: contain !important; /* Jaminan berlapis agar rasio gambar tetap asli */
+    display: block;
+}
+
+.cert-info {
+    padding: 15px;
+}
+
+.cert-info h3 {
+    font-size: 1.1rem;
+    color: #2b4436;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.cert-info p {
+    font-size: 0.85rem;
+    color: #666;
+    line-height: 1.4;
+}
